@@ -1,10 +1,451 @@
 <!DOCTYPE html>
-<html>
-    <head>
-<title>aminekhlif</title>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Store — Boutique en ligne</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    </head>
-    <body>
-       <h1>etude 1 11 1 11 1</h1> 
-    </body>
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo">LUXE<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#hero">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#products">Produits</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn-header">Nous contacter</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero" onclick="closeMobile()">Accueil</a>
+      <a href="#about" onclick="closeMobile()">À propos</a>
+      <a href="#products" onclick="closeMobile()">Produits</a>
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#contact" onclick="closeMobile()">Contact</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-tag animate-up">Collection 2025</span>
+      <h1 class="animate-up delay-1">L'élégance<br><em>redéfinie</em></h1>
+      <p class="animate-up delay-2">Des produits soigneusement sélectionnés pour ceux<br>qui exigent l'excellence dans chaque détail.</p>
+      <div class="hero-btns animate-up delay-3">
+        <a href="#products" class="btn-primary">Découvrir la collection</a>
+        <a href="#about" class="btn-ghost">Notre histoire</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">+500</span>
+        <span class="stat-label">Clients satisfaits</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">48h</span>
+        <span class="stat-label">Livraison express</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Qualité garantie</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5★</span>
+        <span class="stat-label">Avis clients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <div class="about-img-placeholder">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <rect x="8" y="8" width="64" height="64" rx="4" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <path d="M20 55L32 38L42 48L52 30L60 55H20Z" fill="#c9a84c" opacity="0.3"/>
+            <circle cx="35" cy="28" r="6" fill="#c9a84c" opacity="0.4"/>
+          </svg>
+          <p>Votre photo ici</p>
+        </div>
+        <div class="about-badge">
+          <span>Depuis</span>
+          <strong>2020</strong>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Notre histoire</span>
+        <h2>Une passion,<br>un <em>savoir-faire</em></h2>
+        <p>Nous sommes une boutique spécialisée dans la sélection de produits haut de gamme. Notre mission : vous offrir une expérience d'achat unique, alliant qualité, élégance et service personnalisé.</p>
+        <p>Chaque produit est choisi avec soin pour répondre aux standards les plus exigeants. Nous croyons que le luxe n'est pas un privilège, mais une expérience accessible.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon">◆</div>
+            <div>
+              <strong>Qualité</strong>
+              <p>Produits soigneusement sélectionnés</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">◆</div>
+            <div>
+              <strong>Authenticité</strong>
+              <p>100% originaux et certifiés</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Notre sélection</span>
+        <h2>Nos <em>Produits</em></h2>
+        <p>Découvrez notre collection exclusive, pensée pour vous.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="nouveaute">Nouveautés</button>
+        <button class="filter-btn" data-filter="bestseller">Best-sellers</button>
+        <button class="filter-btn" data-filter="promo">Promotions</button>
+      </div>
+
+      <!-- Products grid -->
+      <div class="products-grid">
+
+        <div class="product-card" data-category="nouveaute">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <path d="M12 42L22 26L30 35L40 20L48 42H12Z" fill="#c9a84c" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge">Nouveau</div>
+            <div class="card-actions">
+              <button class="action-btn" title="Aperçu rapide">👁</button>
+              <button class="action-btn" title="Ajouter aux favoris">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Accessoires</span>
+            <h3>Produit Premium 01</h3>
+            <p>Description courte du produit. Qualité supérieure.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">89.00 DT</span>
+                <span class="price-old">110.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bestseller">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <circle cx="30" cy="25" r="10" fill="#c9a84c" opacity="0.35"/>
+                <rect x="18" y="38" width="24" height="4" rx="2" fill="#c9a84c" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge bestseller">⭐ Best-seller</div>
+            <div class="card-actions">
+              <button class="action-btn">👁</button>
+              <button class="action-btn">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Lifestyle</span>
+            <h3>Produit Premium 02</h3>
+            <p>Description courte du produit. Design exclusif.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">120.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="promo">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <polygon points="30,10 38,26 56,26 42,38 47,54 30,44 13,54 18,38 4,26 22,26" fill="#c9a84c" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge promo">-30%</div>
+            <div class="card-actions">
+              <button class="action-btn">👁</button>
+              <button class="action-btn">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Édition limitée</span>
+            <h3>Produit Premium 03</h3>
+            <p>Description courte du produit. Stock limité.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">63.00 DT</span>
+                <span class="price-old">90.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nouveaute">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <rect x="14" y="14" width="14" height="14" rx="2" fill="#c9a84c" opacity="0.35"/>
+                <rect x="32" y="14" width="14" height="14" rx="2" fill="#c9a84c" opacity="0.25"/>
+                <rect x="14" y="32" width="14" height="14" rx="2" fill="#c9a84c" opacity="0.25"/>
+                <rect x="32" y="32" width="14" height="14" rx="2" fill="#c9a84c" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge">Nouveau</div>
+            <div class="card-actions">
+              <button class="action-btn">👁</button>
+              <button class="action-btn">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Collection</span>
+            <h3>Produit Premium 04</h3>
+            <p>Description courte du produit. Raffiné et élégant.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">145.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bestseller">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <path d="M30 12C30 12 48 22 48 34C48 43.9 39.9 52 30 52C20.1 52 12 43.9 12 34C12 22 30 12 30 12Z" fill="#c9a84c" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge bestseller">⭐ Best-seller</div>
+            <div class="card-actions">
+              <button class="action-btn">👁</button>
+              <button class="action-btn">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Lifestyle</span>
+            <h3>Produit Premium 05</h3>
+            <p>Description courte du produit. Très demandé.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">99.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="promo">
+          <div class="card-img">
+            <div class="img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <rect x="4" y="4" width="52" height="52" rx="4" stroke="#c9a84c" stroke-width="1" stroke-dasharray="3 3"/>
+                <path d="M10 30H50M30 10V50" stroke="#c9a84c" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="card-badge promo">-20%</div>
+            <div class="card-actions">
+              <button class="action-btn">👁</button>
+              <button class="action-btn">♡</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Accessoires</span>
+            <h3>Produit Premium 06</h3>
+            <p>Description courte du produit. Offre limitée.</p>
+            <div class="card-footer">
+              <div class="price-group">
+                <span class="price">72.00 DT</span>
+                <span class="price-old">90.00 DT</span>
+              </div>
+              <a href="#contact" class="btn-card">Commander</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pourquoi nous choisir</span>
+        <h2>Nos <em>Services</em></h2>
+        <p>Un service irréprochable à chaque étape de votre expérience.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3>Livraison rapide</h3>
+          <p>Livraison en 24 à 48h dans toute la Tunisie. Suivi de commande en temps réel.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✔️</div>
+          <h3>Qualité garantie</h3>
+          <p>Chaque produit est inspecté avant expédition. Satisfaction assurée ou remboursement.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💬</div>
+          <h3>Support 7j/7</h3>
+          <p>Notre équipe est disponible tous les jours pour répondre à vos questions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔒</div>
+          <h3>Paiement sécurisé</h3>
+          <p>Transactions 100% sécurisées. Paiement à la livraison ou en ligne.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Contactez-nous</span>
+        <h2>Parlons de<br>votre <em>projet</em></h2>
+        <p>Une question sur un produit ? Vous souhaitez passer une commande personnalisée ? Nous sommes là pour vous.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Adresse</strong>
+              <p>Tunis, Tunisie</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Téléphone</strong>
+              <p>+216 XX XXX XXX</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p>contact@luxestore.tn</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="votre@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" placeholder="Objet de votre message">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Décrivez votre demande..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span>Envoyer le message</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-success" id="formSuccess">✅ Message envoyé avec succès !</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">LUXE<span>.</span></a>
+          <p>L'élégance à votre portée.<br>Qualité, authenticité, service.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="#hero">Accueil</a>
+          <a href="#about">À propos</a>
+          <a href="#products">Produits</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Légal</h4>
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">CGV</a>
+          <a href="#">Retours & remboursements</a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <a href="#">Tunis, Tunisie</a>
+          <a href="tel:+21600000000">+216 XX XXX XXX</a>
+          <a href="mailto:contact@luxestore.tn">contact@luxestore.tn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 LUXE Store — Tous droits réservés</p>
+        <p>Conçu avec ♥ en Tunisie</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
